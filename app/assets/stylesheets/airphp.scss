@@ -1,3 +1,9 @@
 // Place all the styles related to the airphp controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.body_menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}

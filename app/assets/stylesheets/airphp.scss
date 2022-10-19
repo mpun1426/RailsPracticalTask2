@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.body_menu {
+.body_menu_airphp {
   display: flex;
   justify-content: space-around;
   list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  border-bottom: 0.5px solid #e0e0e0;
+}
+
+.container_airphp {
+  padding: 0 25px;
 }

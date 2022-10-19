@@ -2,6 +2,14 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -26,10 +34,6 @@ body {
 
 .header_user {
   font-size: 14px;
-}
-
-.yield {
-  padding: 10px 25px;
 }
 
 .footer_title {

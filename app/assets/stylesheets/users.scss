@@ -1,0 +1,50 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.container_users {
+  display: flex;
+  height: 500px;
+}
+
+.side_menu {
+  width: 25%;
+  padding-top: 30px;
+  background-color: #eeeeee;
+}
+
+.marker {
+  border-left: 4px solid #00000000;
+  padding-left: 20px;
+  list-style: none;
+  font-size: 22px;
+  margin-bottom: 14px;
+  height: 45px;
+  display: flex;
+  align-items: center
+}
+
+.marker_selected {
+  border-left: 4px solid #8888ff;
+  padding-left: 20px;
+  color: #8888ff;
+  list-style: none;
+  font-size: 22px;
+  margin-bottom: 14px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.main_menu_users {
+  width: 75%;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.main_content_users {
+  background-color: #FFFFFF;
+  height: 180px;
+  width: 70%;
+}

@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header_logo {
+  font-size: 32px;
+}
+
+.header_title {
+  font-size: 20px;
+  color: #FF395C;
+  margin: 0;
+}
+
+.header_search {
+  width: 200px;
+}
+
+.header_user {
+  font-size: 14px;
+}
+
+.yield {
+  padding: 10px 25px;
+}
+
+.footer_title {
+  font-size: 10px;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+}

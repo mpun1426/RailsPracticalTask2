@@ -1,0 +1,58 @@
+<div class="room_show_main">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <h2 class="room_name"><%= @room.room_name %></h2>
+  <p class="room_review">★ 4.2　<span class="under_line">レビュー7件</span> 　 <span class="under_line"><%= @room.room_address %>、日本</span></p>
+  <p>イメージ画像</p><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="room_show_container">
+    <div class="room_show_contents">
+      <div class="contents_header">
+        <div class="contents_point">
+          <h3 class="room_name_sub">nameさんの住宅の個室</h3>
+          <span class="main_point">セルフチェックイン</span>
+          <span class="sub_point">キーボックスの鍵で入室できます。</span>
+        </div>
+        <div class="avatar">アバター
+        </div>
+      </div>
+      <div class="room_introduction">
+        <%= simple_format(@room.room_introduction) %>
+      </div>
+    </div>
+
+    <div class="room_reserve_content">
+      <p class="reserve_yen"><span class="big_yen">¥ <%= @room.room_price %></span> 泊</p>
+      <div class="check_in">
+        <tr>
+          <th><label for="ci">チェックイン</label></th>
+        </tr>
+        <tr>
+          <td><input type="text" name="ci"></td>
+        </tr>
+      </div>
+      <div class="check_out">
+        <tr>
+          <th><label for="co">チェックアウト</label></th>
+        </tr>
+        <tr>
+          <td><input type="text" name="co"></td>
+        </tr>
+      </div>
+      <tr>
+        <th><label for="ninzu">人数</label></th>
+        <td><input type="text" name="ninzu" placeholder="1"></td>
+      </tr>
+      <button type="submit" class="reserve_button">予約する</button>
+      <p class="before_reserve">まだ請求されません</p>
+      <div class="flex_between">
+        <p>清掃料金</p>
+        <p>¥ 0</p>
+      </div>
+      <div class="flex_between">
+        <p>サービス料</p>
+        <p>¥ 0</p>
+      </div>
+    </div>
+  </div>
+</div>

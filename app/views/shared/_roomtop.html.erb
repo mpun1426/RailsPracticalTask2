@@ -1,0 +1,21 @@
+<div class="index_room">
+<% @rooms.each do |room| %>
+  <table class="index_rooms">
+    <tr>
+      <td>イメージ画像</td>
+    </tr>
+    <tr>
+      <td><%= link_to "#{room.room_name}", room %></td>
+    </tr>
+    <tr>
+      <td><%= link_to "#{room.room_address}", room %></td>
+    </tr>
+    <tr>
+      <td><%= link_to "#{room.updated_at}", room %></td>
+    </tr>
+    <tr>
+      <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
+    </tr>
+  </table>
+<% end %>
+</div>

@@ -1,3 +1,212 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// index
+.index_room {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.index_rooms {
+  border: solid;
+  width: 300px;
+  max-height: 400px;
+  margin: 0 15px 40px;
+}
+
+.index_rooms td {
+  font-size: 15px;
+  padding: 0;
+}
+
+// new
+
+.main_content_rooms {
+  background-color: #FFFFFF;
+  height: 700px;
+  width: 70%;
+  overflow: auto;
+}
+
+.main_container_rooms_center {
+  width: 660px;
+  margin: 50px auto;
+}
+
+.newroom {
+  width: 650px;
+  margin: 50px auto;
+}
+
+.room_new {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+}
+
+table.new {
+  width: 620px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+table.new th, table.new td {
+  border-top: solid 1px #A4A8AA;
+  padding: 15px 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 55px;
+  text-align: start;
+}
+
+.room_new_buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.room_button {
+  color: #FFFFFF !important;
+  background-color: #D70665;
+  padding: 7px 18px;
+  margin-left: 20px;
+  border: solid;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.room_button:hover {
+  background-color: #E61D50;
+  cursor: pointer;
+}
+
+
+// show
+
+.room_show_main {
+  max-width: 1120px;
+  margin: 20px auto;
+}
+
+.room_name {
+  font-size: 26px;
+  margin: 0;
+}
+
+.room_review {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.room_show_container {
+  margin: 45px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room_show_contents {
+  margin: 0;
+  width: 650px;
+}
+
+.contents_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 25px 0;
+}
+
+.room_name_sub {
+  font-size: 22px;
+  margin: 0 0 5px 0;
+}
+
+.main_point {
+  font-weight: bold;
+  color: #525252;
+}
+
+.sub_point {
+  font-size: 14px;
+  color: #818181;
+}
+
+.room_introduction {
+  min-height: 150px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 30px 0;
+}
+
+.room_reserve_content {
+  margin: 0;
+  width: 300px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 25px;
+  max-height: 350px;
+}
+
+.reserve_yen {
+  margin: 0 0 24px;
+}
+
+.big_yen {
+  font-size: 22px;
+}
+
+.check_in {
+  display: block;
+}
+
+.check_out {
+  display: block;
+}
+
+.reserve_button {
+  display: block;
+}
+
+.before_reserve {
+  font-size: 14px;
+  text-align: center;
+  color: #525252;
+  margin: 15px 0 20px;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_between p {
+  margin: 4px 0;
+}
+
+.under_line {
+  text-decoration: underline;
+}
+
+// edit
+
+.edit_upper {
+  height: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.room_edit_button {
+  color: #FFFFFF !important;
+  background-color: #D70665;
+  margin: 0 5px;
+  padding: 3px 15px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.room_edit_button:hover {
+  background-color: #E61D50;
+}

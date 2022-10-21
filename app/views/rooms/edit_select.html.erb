@@ -1,0 +1,43 @@
+<div class="container_users">
+  <div class="side_menu">
+    <ul>
+      <li class="marker"><%= link_to "ホストルーム新規登録", new_room_path %></li>
+      <li class="marker"><%= link_to "登録済ホストルーム情報", rooms_path %></li>
+      <li class="marker_selected">登録済ホストルーム編集</li>
+    </ul>
+  </div>
+  <div class="main_menu_users">
+    <div class="main_content_rooms">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <div class="main_container_rooms_center">
+        <h2>編集するホストルームを選択してください</h2>
+        <div class="index_room">
+          <% @rooms.each do |room| %>
+            <table class="index_rooms">
+              <tr>
+                <td>イメージ画像</td>
+              </tr>
+              <tr>
+                <td><%= link_to "#{room.room_name}", room %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "#{room.room_address}", room %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "#{room.updated_at}", room %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "このルームを編集する", [:edit, room], class: "room_edit_button" %></td>
+              </tr>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

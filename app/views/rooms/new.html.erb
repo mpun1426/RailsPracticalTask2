@@ -1,0 +1,45 @@
+<div class="container_users">
+  <div class="side_menu">
+    <ul>
+      <li class="marker_selected">ホストルーム新規登録</li>
+      <li class="marker"><%= link_to "登録済ホストルーム情報", rooms_path %></li>
+      <li class="marker"><%= link_to "登録済ホストルーム編集", rooms_edit_select_path %></li>
+    </ul>
+  </div>
+  <div class="main_menu_users">
+    <div class="main_content_rooms">
+      <%= form_with model: @room do |f| %>
+        <div class="newroom">
+          <p class="room_new">ホストルーム新規登録</p>
+          <table class="new">
+            <tr>
+              <th><%= f.label :room_name, "ルーム名" %></th>
+              <td><%= f.text_field :room_name, placeholder: "ルームのタイトル・一言アピールポイント" %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :room_address, "所在地" %></th>
+              <td><%= f.text_field :room_address, placeholder: "ルームの所在地（都道府県市町村区）" %></td>
+            </tr>
+            <tr class="height">
+              <th><%= f.label :room_introduction, "ルーム紹介" %></th>
+              <td><%= f.text_area :room_introduction, placeholder: "ルームの紹介、アピールポイント&#13;&#10;改行はそのまま反映されます".html_safe %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :room_price, "料金" %></th>
+              <td><%= f.text_field :room_price, placeholder: "1泊の料金" %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :image, "画像" %></th>
+              <td><%= f.text_field :image, placeholder: "画像アドレス" %></td>
+            </tr>
+          </table>
+
+          <div class="room_new_buttons">
+            <%= link_to "ホストルーム情報に戻る", rooms_path, class: "room_button" %>
+            <%= f.submit "新規登録を完了する", class: "room_button" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

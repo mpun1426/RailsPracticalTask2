@@ -14,8 +14,16 @@
     <header>
       <div class="header">
         <h1 class="header_title"><span class="header_logo"><%= link_to "⏅", airphp_index_path %></span> <%= link_to "airphp", airphp_index_path %></h1>
-        <div class="header_search"><input type="text"></div>
-        <p class="header_user"><%= link_to "ホストになる", new_room_path %>　<%= link_to "ユーザーさん", users_path %></p>
+        <div class="header_search">
+          <%= search_form_for @q, url: airphp_index_path do |f| %>
+            <div class="search_flex">
+              <div class="search_flex_ad"><%= f.search_field :room_address_cont, placeholder: "場所" %></div>
+              <div class="search_flex_key"><%= f.search_field :room_name_or_room_address_or_room_introduction_cont, placeholder: "キーワード" %></div>
+              <div><%= f.submit "検索", class: "search_flex_button" %></div>
+            </div>
+          <% end %>
+        </div>
+        <p class="header_user"><%= link_to "ホストになる", rooms_path %>　<%= link_to "ユーザーさん", users_path %></p>
       </div>
     </header>
     <div class="yield">

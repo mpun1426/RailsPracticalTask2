@@ -7,6 +7,27 @@ img {
   object-fit: cover;
 }
 
+.room_search_form input {
+  height: 30px;
+  width: 215px;
+  margin: 10px 0 20px 10px;
+}
+
+.room_search_button {
+  color: #FFFFFF !important;
+  background-color: #D70665;
+  width: 60px !important;
+  text-align: center;
+  padding: 3px 15px;
+  border-radius: 6px;
+  border: none;
+}
+
+.room_search_button:hover {
+  background-color: #E61D50;
+  cursor: pointer;
+}
+
 .index_room {
   display: flex;
   flex-wrap: wrap;
@@ -40,6 +61,10 @@ img {
   border-radius: 12px;
 }
 
+.padding_top_10 {
+  padding-top: 10px !important;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -52,19 +77,23 @@ img {
 
 .main_content_rooms {
   background-color: #FFFFFF;
-  height: 700px;
+  height: 750px;
   width: 70%;
   overflow: auto;
 }
 
 .main_container_rooms_center {
   width: 660px;
-  margin: 50px auto;
+  margin: 20px auto;
+}
+
+.main_container_rooms_center h2 {
+  margin: 0;
 }
 
 .newroom {
   width: 650px;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
 .room_new {
@@ -73,10 +102,32 @@ img {
   margin: 0 0 25px 0;
 }
 
+.hissu {
+  color: #FFFFFF;
+  font-size: 11px;
+  background-color: #EA0000;
+  padding: 4px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: text-bottom;
+}
+
+.small {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
 table.new {
   width: 620px;
   margin: 0 auto;
   border-collapse: collapse;
+}
+
+table.new input {
+  height: 30px;
+  width: 400px;
+  font-size: 16px;
 }
 
 table.new th, table.new td {
@@ -85,7 +136,25 @@ table.new th, table.new td {
   font-size: 18px;
   font-weight: bold;
   height: 55px;
+  width: 250px;
+}
+
+table.new th {
   text-align: start;
+}
+
+table.new td {
+  width: 410px;
+}
+
+.height {
+  height: 220px;
+}
+
+#room_room_introduction {
+  height: 140px;
+  width: 402px;
+  font-size: 16px;
 }
 
 .room_new_buttons {

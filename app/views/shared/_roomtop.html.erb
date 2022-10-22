@@ -1,25 +1,25 @@
 <div class="index_room">
-<% @rooms.each do |room| %>
-  <table class="index_rooms">
-    <tr>
-      <% if room.image? %>
-        <td class="image_index"><%= link_to image_tag(room.image.url), room %></td>
-      <% else %>
-        <td><%= link_to "No Image", room, class:"no_image_index" %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <td><%= link_to "#{room.room_name}", room, class: "bold" %></td>
-    </tr>
-    <tr>
-      <td><%= link_to "#{room.room_address}", room, class: "gray" %></td>
-    </tr>
-    <tr>
-      <td><%= link_to "#{room.updated_at}", room, class: "gray" %></td>
-    </tr>
-    <tr>
-      <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
-    </tr>
-  </table>
-<% end %>
+  <% @rooms.each do |room| %>
+    <table class="index_rooms">
+      <tr>
+        <% if room.image? %>
+          <td class="image_index"><%= link_to image_tag(room.image.url), room %></td>
+        <% else %>
+          <td><%= link_to "No Image", room, class:"no_image_index" %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td class="padding_top_10"><%= link_to "#{room.room_name}", room, class: "bold" %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "#{room.room_address}", room, class: "gray" %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "#{room.updated_at}", room, class: "gray" %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
+      </tr>
+    </table>
+  <% end %>
 </div>

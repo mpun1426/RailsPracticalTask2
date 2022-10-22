@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  before_action :search
+
   def index
     # @user = User.all
+    @rooms = @q.result
   end
 
   def new
@@ -43,5 +46,9 @@ class UsersController < ApplicationController
     # else
     #   render 'edit'
     # end
+  end
+
+  def search
+    @q = Room.ransack(params[:q])
   end
 end

@@ -13,6 +13,14 @@
       <% end %>
       <div class="main_container_rooms_center">
         <h2>編集するホストルームを選択してください</h2>
+        <div>
+          <%= search_form_for @q, url:rooms_edit_select_path do |f| %>
+            <div class="room_search_form">
+              <%= f.search_field :room_name_or_room_address_cont, placeholder: " ルーム名または所在地で検索" %>
+              <%= f.submit "検索", class: "room_search_button" %>
+            </div>
+          <% end %>
+        </div>
         <div class="index_room">
           <% @rooms.each do |room| %>
             <table class="index_rooms">

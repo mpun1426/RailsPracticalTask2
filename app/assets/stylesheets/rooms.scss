@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // index
+img {
+  object-fit: cover;
+}
+
 .index_room {
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +15,6 @@
 }
 
 .index_rooms {
-  border: solid;
   width: 300px;
   max-height: 400px;
   margin: 0 15px 40px;
@@ -20,6 +23,29 @@
 .index_rooms td {
   font-size: 15px;
   padding: 0;
+}
+
+.image_index img {
+  width: 296px;
+  height: 192.5px;
+  vertical-align: middle;
+  border-radius: 12px;
+}
+
+.no_image_index {
+  display: block;
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 85px 0px;
+  border-radius: 12px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.gray {
+  color: #717171 !important;
 }
 
 // new
@@ -86,7 +112,7 @@ table.new th, table.new td {
 // show
 
 .room_show_main {
-  max-width: 1120px;
+  max-width: 1150px;
   margin: 20px auto;
 }
 
@@ -98,6 +124,39 @@ table.new th, table.new td {
 .room_review {
   font-size: 14px;
   margin: 8px 0;
+}
+
+.image_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image_main {
+  margin: 0;
+  height: 500px;
+}
+
+.image_sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.image_main img {
+  width: 750px;
+  height: 500px;
+}
+
+.image_sub img {
+  width: 360px;
+  height: 240px;
+}
+
+.no_image {
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 200px 0px;
 }
 
 .room_show_container {

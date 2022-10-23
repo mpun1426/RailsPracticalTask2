@@ -23,7 +23,23 @@
             </div>
           <% end %>
         </div>
-        <p class="header_user"><%= link_to "ホストになる", rooms_path %>　<%= link_to "ユーザーさん", users_path %></p>
+        <p class="header_user"><%= link_to "ホストになる", rooms_path %></p>
+        <p class="header_user">
+          <% if user_signed_in? %>
+            <%= link_to "ユーザーさん", users_path %>
+            <%= link_to "プロフィール変更", edit_user_registration_path %>　
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>　
+            <%= link_to "#{current_user.nickname}さん", users_path %>
+            <% if current_user.avatar? %>
+              <%= link_to image_tag(current_user.avatar.url), users_path, class: "user_avatar" %>
+            <% else %>
+              <%= link_to image_tag('sample.jpeg'), users_path, class: "user_avatar" %>
+            <% end %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path %>　
+            <%= link_to "登録", new_user_registration_path %>
+          <% end %>
+        </p>
       </div>
     </header>
     <div class="yield">

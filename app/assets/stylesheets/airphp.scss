@@ -3,11 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .body_menu_airphp {
+  position: fixed;
+  background-color: #FFFFFF;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   list-style: none;
   padding: 15px 0;
-  margin: 0 0 35px;
+  margin: 0;
   border-bottom: 0.5px solid #e0e0e0;
 }
 
@@ -27,6 +30,6 @@
 }
 
 .container_airphp {
-  padding: 0 25px 25px;
-  min-height: 717px;
+  padding: 0;
+  margin-top: 86px;
 }

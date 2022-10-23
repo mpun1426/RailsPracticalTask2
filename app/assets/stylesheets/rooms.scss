@@ -10,7 +10,7 @@ img {
 .room_search_form input {
   height: 30px;
   width: 215px;
-  margin: 10px 0 20px 10px;
+  margin: 10px 0 0 10px;
 }
 
 .room_search_button {
@@ -33,11 +33,12 @@ img {
   flex-wrap: wrap;
   max-width: 1320px;
   margin: 0 auto;
+  padding-top: 35px;
 }
 
 .index_rooms {
   width: 300px;
-  max-height: 400px;
+  max-height: 305px;
   margin: 0 15px 40px;
 }
 
@@ -77,6 +78,7 @@ img {
 
 .main_content_rooms {
   background-color: #FFFFFF;
+  margin-bottom: 30px;
   height: 750px;
   width: 70%;
   overflow: auto;

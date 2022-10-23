@@ -2,9 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.user_avatar img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border: 1.5px solid #00D53A;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.user_admin_signup {
+  margin: 40px auto 50px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 25px;
+  height: 690px;
+}
+
+.user_admin_login {
+  margin: 75px auto 200px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 25px;
+  height: 500px;
+}
+
+.user_admin_content h2 {
+  margin: 0px;
+}
+
+.field input {
+  width: 500px;
+  height: 50px;
+}
+
+.checkbox {
+  margin: 10px 0;
+}
+
+.checkbox input {
+  height: 25px;
+  width: 25px;
+}
+
+.checkbox_str {
+  display: inline-block;
+  vertical-align: super;
+}
+
+.option1 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.option2 {
+  margin-top: 20px;
+}
+
 .container_users {
   display: flex;
-  min-height: 830px;
 }
 
 .side_menu {

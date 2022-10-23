@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'airphp#index'
+  get 'airphp/index'
+  devise_for :users
   get 'rooms/index'
   get 'users/index'
   get 'users/account'

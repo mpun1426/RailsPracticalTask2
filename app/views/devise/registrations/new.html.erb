@@ -1,0 +1,47 @@
+<div class="user_admin_signup">
+  <h2>Airphpへようこそ</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :nickname, "ニックネーム" %><br />
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :introduction, "一言紹介" %><br />
+      <%= f.text_field :introduction, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :avatar, "アバター" %><span class="small">jpg, jpeg, gif, png</span><br />
+      <%= f.file_field :avatar %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する", class: "reserve_button" %>
+    </div>
+  <% end %>
+
+  <div class="option1">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

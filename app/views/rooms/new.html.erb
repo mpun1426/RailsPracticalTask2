@@ -31,8 +31,7 @@
             <tr>
               <th><%= f.label :image, "画像" %><span class="small">jpg, jpeg, gif, png</span></th>
               <td>
-                <%= f.file_field :image, onchange: 'previewImage()', class: "form-control" %>
-                <%= f.hidden_field :image_cache %>
+                <%= f.file_field :image %>
               </td>
             </tr>
           </table>

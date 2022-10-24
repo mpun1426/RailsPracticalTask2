@@ -38,6 +38,7 @@ header {
 }
 
 .header {
+  height: 67px;
   display: flex;
   justify-content: space-between;
   padding: 10px 70px;
@@ -52,6 +53,10 @@ header {
   font-size: 20px;
   color: #FF395C;
   margin: 0;
+}
+
+.header_search {
+  margin-left: 150px;
 }
 
 .search_flex {
@@ -100,8 +105,39 @@ header {
 }
 
 .header_user {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header_icon_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 12px;
+}
+
+.header_menu_icon_logo {
+  height: 30px;
+}
+
+.header_menu_icon_name {
+  font-size: 12px;
+}
+
+.user_admin_button {
+  color: #FFFFFF !important;
+  background-color: #FF395C;
+  padding: 12px 10px;
+  border: solid;
+  border-radius: 20px;
   font-size: 14px;
-  margin: 10px 0;
+}
+
+.user_admin_button:hover {
+  background-color: #FF395CD0;
+  cursor: pointer;
 }
 
 footer {

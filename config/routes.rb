@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'users/sign_up' => 'users#new'
   get 'airphp/index'
   get 'rooms/edit_select'
-  resources :users
+  resources :users, :only => [:index, :show]
   resources :rooms do
     collection do
       get 'search'

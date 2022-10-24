@@ -23,23 +23,27 @@
             </div>
           <% end %>
         </div>
-        <p class="header_user"><%= link_to "ホストになる", rooms_path %></p>
-        <p class="header_user">
+        <div class="header_user">
           <% if user_signed_in? %>
-            <%= link_to "ユーザーさん", users_path %>
-            <%= link_to "プロフィール変更", edit_user_registration_path %>　
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>　
-            <%= link_to "#{current_user.nickname}さん", users_path %>
+            <%= link_to "#{current_user.nickname}さん", users_account_path %>
             <% if current_user.avatar? %>
-              <%= link_to image_tag(current_user.avatar.url), users_path, class: "user_avatar" %>
+              <%= link_to image_tag(current_user.avatar.url), users_account_path, class: "user_avatar" %>
             <% else %>
-              <%= link_to image_tag('sample.jpeg'), users_path, class: "user_avatar" %>
+              <%= link_to image_tag('sample.jpeg'), users_account_path, class: "user_avatar" %>
             <% end %>
+            <div class="header_icon_flex">
+              <div class="header_menu_icon_logo"><%= link_to image_tag('home.jpeg'), rooms_path %></div>
+              <div class="header_menu_icon_name"><%= link_to "ホストルーム", rooms_path %></div>
+            </div>
+            <div class="header_icon_flex">
+              <div class="header_menu_icon_logo"><%= link_to image_tag('logout.jpeg'), destroy_user_session_path, method: :delete %></div>
+              <div class="header_menu_icon_name"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+            </div>
           <% else %>
-            <%= link_to "ログイン", new_user_session_path %>　
-            <%= link_to "登録", new_user_registration_path %>
+            <%= link_to "ログイン", new_user_session_path, class: "user_admin_button" %>　
+            <%= link_to "　登録　", new_user_registration_path, class: "user_admin_button" %>
           <% end %>
-        </p>
+        </div>
       </div>
     </header>
     <div class="yield">

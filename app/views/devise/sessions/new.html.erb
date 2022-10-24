@@ -1,16 +1,17 @@
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 <div class="user_admin_login">
   <h2>おかえりなさいませ</h2>
   <h3>ログインしましょう</h3>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :email, "メールアドレス" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "　メールアドレス" %>
     </div>
 
     <div class="field">
-      <%= f.label :password, "パスワード" %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "　パスワード" %>
     </div>
 
     <% if devise_mapping.rememberable? %>

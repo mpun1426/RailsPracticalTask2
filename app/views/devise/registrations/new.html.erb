@@ -1,38 +1,33 @@
 <div class="user_admin_signup">
+  <h3>ユーザー登録</h3>
   <h2>Airphpへようこそ</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :nickname, "ニックネーム" %><br />
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "　メールアドレス" %>
     </div>
 
     <div class="field">
-      <%= f.label :email, "メールアドレス" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password, "パスワード" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "　パスワード（#{@minimum_password_length}文字以上の半角英数字）" %>
+      <% end %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "　パスワード（確認のため再度入力して下さい）" %>
     </div>
 
     <div class="field">
-      <%= f.label :introduction, "一言紹介" %><br />
-      <%= f.text_field :introduction, autofocus: true %>
+      <%= f.text_field :nickname, autocomplete: "nickname", placeholder: "　ニックネーム" %>
     </div>
 
     <div class="field">
-      <%= f.label :avatar, "アバター" %><span class="small">jpg, jpeg, gif, png</span><br />
+      <%= f.text_field :introduction, placeholder: "　一言紹介" %>
+    </div>
+
+    <div class="avatar_field">
+      <%= f.label :avatar, "　アバター" %><span class="small"> jpg, jpeg, gif, png　</span>
       <%= f.file_field :avatar %>
     </div>
 

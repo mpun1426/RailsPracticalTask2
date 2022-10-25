@@ -1,56 +1,60 @@
-<div class="container_users">
-  <div class="side_menu">
-    <ul>
-      <li class="marker"><%= link_to "ユーザー管理", users_account_path %></li><br>
-      <li class="marker"><%= link_to "ホストルーム新規登録", new_room_path %></li>
-      <li class="marker"><%= link_to "登録済ホストルーム情報", rooms_path %></li>
-      <li class="marker_selected">登録済ホストルーム編集</li>
-    </ul>
-  </div>
-  <div class="main_menu_users">
-    <div class="main_content_rooms">
-      <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-      <% end %>
-      <div class="main_container_rooms_center">
-        <h2>編集するホストルームを選択してください</h2>
-        <div>
-          <%= search_form_for @q, url:rooms_edit_select_path do |f| %>
-            <div class="room_search_form">
-              <%= f.search_field :room_name_or_room_address_cont, placeholder: " ルーム名または所在地で検索" %>
-              <%= f.submit "検索", class: "room_search_button" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="index_room">
-          <% @rooms.each do |room| %>
-            <table class="index_rooms">
-              <tr>
-                <% if room.image? %>
-                  <td class="image_index"><%= link_to image_tag(room.image.url), room %></td>
-                <% else %>
-                  <td><%= link_to "No Image", room, class:"no_image_index" %></td>
-                <% end %>
-              </tr>
-              <tr>
-                <td><%= link_to "#{room.room_name}", room, class: "bold" %></td>
-              </tr>
-              <tr>
-                <td><%= link_to "#{room.room_address}", room, class: "gray" %></td>
-              </tr>
-              <tr>
-                <td><%= link_to "#{room.updated_at}", room, class: "gray" %></td>
-              </tr>
-              <tr>
-                <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
-              </tr>
-              <tr>
-                <td><%= link_to "このルームを編集する", [:edit, room], class: "room_edit_button" %></td>
-              </tr>
-            </table>
-          <% end %>
+<% if current_user.present? %>
+  <div class="container_users">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <div class="side_menu">
+      <ul>
+        <li class="marker"><%= link_to "ユーザー管理", users_account_path %></li><br>
+        <li class="marker"><%= link_to "ホストルーム新規登録", new_room_path %></li>
+        <li class="marker"><%= link_to "登録済ホストルーム情報", rooms_path %></li>
+        <li class="marker_selected">登録済ホストルーム編集</li>
+      </ul>
+    </div>
+    <div class="main_menu_users">
+      <div class="main_content_rooms">
+        <div class="main_container_rooms_center">
+          <h2>編集するホストルームを選択してください</h2>
+          <div>
+            <%= search_form_for @q, url:rooms_edit_select_path do |f| %>
+              <div class="room_search_form">
+                <%= f.search_field :room_name_or_room_address_cont, placeholder: " ルーム名または所在地で検索" %>
+                <%= f.submit "検索", class: "room_search_button" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="index_room">
+            <% @rooms.each do |room| %>
+              <table class="index_rooms">
+                <tr>
+                  <% if room.image? %>
+                    <td class="image_index"><%= link_to image_tag(room.image.url), room %></td>
+                  <% else %>
+                    <td><%= link_to "No Image", room, class:"no_image_index" %></td>
+                  <% end %>
+                </tr>
+                <tr>
+                  <td><%= link_to "#{room.room_name}", room, class: "bold" %></td>
+                </tr>
+                <tr>
+                  <td><%= link_to "#{room.room_address}", room, class: "gray" %></td>
+                </tr>
+                <tr>
+                  <td><%= link_to "#{room.updated_at}", room, class: "gray" %></td>
+                </tr>
+                <tr>
+                  <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
+                </tr>
+                <tr>
+                  <td><%= link_to "このルームを編集する", [:edit, room], class: "room_edit_button" %></td>
+                </tr>
+              </table>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% else %>
+  <%= render 'shared/nologin' %>
+<% end %>

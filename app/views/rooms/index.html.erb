@@ -1,4 +1,7 @@
 <div class="container_users">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
   <div class="side_menu">
     <ul>
       <li class="marker"><%= link_to "ユーザー管理", users_account_path %></li><br>
@@ -9,9 +12,6 @@
   </div>
   <div class="main_menu_users">
     <div class="main_content_rooms">
-      <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-      <% end %>
       <div class="main_container_rooms_center">
         <h2>自分がホストのルーム一覧</h2>
         <%= search_form_for @q do |f| %>

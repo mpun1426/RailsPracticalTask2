@@ -1,25 +1,27 @@
-<%# <h1>ユーザー情報</h1> %>
-<%# <p>ログインしているユーザーの情報</p> %>
-<div class="container_users">
-  <div class="side_menu">
-    <ul>
-      <li class="marker_selected">ユーザー管理</li>
-      <li class="marker"><%= link_to "アカウント情報", users_account_path %></li>
-      <li class="marker"><%= link_to "プロフィール情報", users_profile_path %></li>
-    </ul>
-  </div>
-  <div class="main_menu_users">
-    <div class="main_content_users">
-    <table class="user_index_table">
-      <tr>
-        <th>プロフ参照</th>
-        <th>プロフ編集</th>
-      </tr>
-      <tr>
-        <td>画像参照</td>
-        <td>画像編集</td>
-      </tr>
-    </table>
+<% if current_user.present? %>
+  <div class="container_users">
+    <div class="side_menu">
+      <ul>
+        <li class="marker_selected">ユーザー管理</li>
+        <li class="marker"><%= link_to "アカウント情報", users_account_path %></li>
+        <li class="marker"><%= link_to "プロフィール情報", users_profile_path %></li>
+      </ul>
+    </div>
+    <div class="main_menu_users">
+      <div class="main_content_users">
+      <table class="user_index_table">
+        <tr>
+          <th>プロフ参照</th>
+          <th>プロフ編集</th>
+        </tr>
+        <tr>
+          <td>画像参照</td>
+          <td>画像編集</td>
+        </tr>
+      </table>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <%= render 'shared/nologin' %>
+<% end %>

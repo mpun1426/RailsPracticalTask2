@@ -1,17 +1,14 @@
 <div class="room_show_main">
-  <% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
-  <% end %>
   <h2 class="room_name"><%= @room.room_name %></h2>
   <p class="room_review">★ 4.2　<span class="under_line">レビュー7件</span> 　 <span class="under_line"><%= @room.room_address %>、日本</span></p>
   <% if @room.image? %>
     <div class="image_flex">
       <div class="image_main">
-        <%= image_tag @room.image.url %>
+        <%= image_tag @room.image.url, class:"image_main1" %>
       </div>
       <div class="image_sub">
-        <%= image_tag @room.image.url %>
-        <%= image_tag @room.image.url %>
+        <%= image_tag @room.image.url, class: "image_sub1" %>
+        <%= image_tag @room.image.url, class: "image_sub2" %>
       </div>
     </div>
   <% else %>
@@ -21,11 +18,24 @@
     <div class="room_show_contents">
       <div class="contents_header">
         <div class="contents_point">
-          <h3 class="room_name_sub">nameさんの住宅の個室</h3>
+          <% if @host.presence %>
+            <h3 class="room_name_sub"><%= "#{@host.nickname}" %>さんの住宅の個室</h3>
+          <% else %>
+            <h3 class="room_name_sub">匿名さんの住宅の個室</h3>
+          <% end %>
           <span class="main_point">セルフチェックイン</span>
           <span class="sub_point">キーボックスの鍵で入室できます。</span>
         </div>
-        <div class="avatar">アバター
+        <div class="avatar">
+          <% if @host.presence %>
+            <% if @host.avatar.presence %>
+              <%= image_tag @host.avatar.url %>
+            <% else %>
+              <%= image_tag('sample.jpeg') %>
+            <% end %>
+          <% else %>
+            <%= image_tag('sample.jpeg') %>
+          <% end %>
         </div>
       </div>
       <div class="room_introduction">

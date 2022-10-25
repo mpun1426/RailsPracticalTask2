@@ -7,7 +7,16 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require('jquery')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(function(){
+  setTimeout("$('.notice').hide().fadeIn('slow')", 0);
+});
+
+$(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 2000);
+});

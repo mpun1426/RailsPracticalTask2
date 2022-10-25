@@ -22,11 +22,11 @@
             </div>
             <table class="new">
               <tr>
-                <th><%= f.label :room_name, "ルーム名" %></th>
+                <th><%= f.label :room_name, "ルーム名" %><span class="hissu">必須</span></th>
                 <td><%= f.text_field :room_name, placeholder: "ルームのタイトル・一言アピールポイント" %></td>
               </tr>
               <tr>
-                <th><%= f.label :room_address, "所在地" %></th>
+                <th><%= f.label :room_address, "所在地" %><span class="hissu">必須</span></th>
                 <td><%= f.text_field :room_address, placeholder: "ルームの所在地（都道府県市町村区）" %></td>
               </tr>
               <tr class="height">
@@ -34,7 +34,7 @@
                 <td><%= f.text_area :room_introduction, placeholder: "ルームの紹介、アピールポイント&#13;&#10;改行はそのまま反映されます".html_safe %></td>
               </tr>
               <tr>
-                <th><%= f.label :room_price, "料金" %></th>
+                <th><%= f.label :room_price, "料金" %><span class="hissu">必須</span></th>
                 <td><%= f.text_field :room_price, placeholder: "1泊の料金" %></td>
               </tr>
               <tr>

@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.all
-    @rooms = @q.result
+    @myrooms = Room.where(user_id: current_user.id)
   end
 
   def new
@@ -24,7 +24,6 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @host = User.find_by(id: @room.user_id)
-    pp @host
   end
 
   def edit
@@ -49,14 +48,18 @@ class RoomsController < ApplicationController
 
   def destroy
     @room = Room.find(params[:id])
-    @room.destroy
-    flash[:notice] = "ホストルームを削除しました"
-    redirect_to rooms_edit_select_path
+    if current_user.id == @room.user_id
+      @room.destroy
+      flash[:notice] = "ホストルームを削除しました"
+      redirect_to rooms_edit_select_path
+    else
+      flash.now[:notice] = "自分がホストのルーム以外は編集できません"
+      render 'edit'
+    end
   end
 
   def edit_select
-    @rooms = Room.all
-    @rooms = @q.result
+    @myrooms = Room.where(user_id: current_user.id)
   end
 
   def search

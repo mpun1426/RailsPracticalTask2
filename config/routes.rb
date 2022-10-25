@@ -2,14 +2,10 @@ Rails.application.routes.draw do
   root to: 'airphp#index'
   get 'airphp/index'
   devise_for :users
-  get 'rooms/index'
-  get 'users/index'
   get 'users/account'
-  get 'users/profile'
   get 'users/sign_up' => 'users#new'
-  get 'airphp/index'
+  get 'rooms/index'
   get 'rooms/edit_select'
-  resources :users, :only => [:index, :show]
   resources :rooms do
     collection do
       get 'search'

@@ -1,0 +1,38 @@
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<div class="reservation_container">
+  <h2>予約されているルーム一覧</h2>
+
+  <table class="reservation_index_table">
+    <tr>
+      <th class="res_image">ルーム写真</th>
+      <th class="res_name">ルーム名</th>
+      <th class="res_hn">予約者</th>
+      <th class="res_ci">チェックイン</th>
+      <th class="res_co">チェックアウト</th>
+      <th class="res_num">宿泊人数</th>
+      <th class="res_sum">合計料金</th>
+      <th class="res_date">予約日時</th>
+      <th class="res_del">予約取消</th>
+    </tr>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <% if reservation.room.image? %>
+          <td class="image_reserve"><%= image_tag reservation.room.image.url %></td>
+        <% else %>
+          <td class="no_image_reserve">No Photo</td>
+        <% end %>
+        <td><%= reservation.room.room_name %></td>
+        <td><%= reservation.user.nickname %>さん</td>
+        <td><%= l reservation.check_in %></td>
+        <td><%= l reservation.check_out %></td>
+        <td><%= reservation.people %>人</td>
+        <td>¥<%= reservation.total_price %>-</td>
+        <td><%= l reservation.updated_at %></td>
+        <td><%= link_to "予約取消", reservation, method: :delete, class: "reserve_delete_button", data: {confirm: "本当に予約取消しますか？"} %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

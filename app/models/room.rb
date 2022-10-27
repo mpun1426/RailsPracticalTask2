@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :user
+  has_many :reservations
 
   validates :room_name, length: {minimum: 1}
   validates :room_address, length: {minimum: 2}

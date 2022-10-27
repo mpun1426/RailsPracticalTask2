@@ -13,6 +13,7 @@
     </div>
     <div class="main_menu_users">
       <div class="main_content_rooms">
+        <%= render "shared/error", obj: @room %>
         <%= form_with model: @room do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
           <div class="newroom">

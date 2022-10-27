@@ -1,0 +1,51 @@
+<%= render "shared/error", obj: @reservation %>
+<% if current_user.present? %>
+  <div class="user_admin_show">
+    <h4 class="reserve_confirm">予約内容の確認をして下さい</h4>
+    <%= form_with model: @reservation do |f| %>
+      <table class="reserve_confirm_table">
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :room_id %>
+        <tr>
+          <th>ルーム名</th>
+          <td><%= @reservation.room.room_name %></td>
+        </tr>
+        <tr>
+          <% if @room.present? %>
+            <th><%= "ルーム料金" %></th>
+            <td><span class="big_yen">¥ <%= @room.room_price %></span> 泊</td>
+          <% end %>
+        </tr>
+        <tr>
+          <th>チェックイン</th>
+          <td><%= l @reservation.check_in %></td>
+        </tr>
+        <tr>
+          <th>チェックアウト</th>
+          <td><%= l @reservation.check_out %></td>
+        </tr>
+        <tr>
+          <th>宿泊日数</th>
+          <td><%= @stay_days %>日間（<%= @stay_days %>泊<%= @stay_days + 1 %>日）</td>
+        </tr>
+        <tr>
+          <th>宿泊人数</th>
+          <td><%= @reservation.people %>人</td>
+        </tr>
+        <tr>
+          <th>合計金額</th>
+          <td><%= @total_price %>円</td>
+        </tr>
+        <%= f.hidden_field :check_in %>
+        <%= f.hidden_field :check_out %>
+        <%= f.hidden_field :people %>
+        <%= f.hidden_field :total_price, value: @total_price %>
+      </table>
+      <div class="res_submit">
+        <%= f.submit "予約を確定する", class: "reserve_button" %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <%= render 'shared/nologin' %>
+<% end %>

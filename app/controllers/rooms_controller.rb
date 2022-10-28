@@ -1,6 +1,4 @@
 class RoomsController < ApplicationController
-  before_action :search
-
   def index
     @rooms = Room.all
     @myrooms = Room.where(user_id: current_user.id)
@@ -49,22 +47,24 @@ class RoomsController < ApplicationController
 
   def destroy
     @room = Room.find(params[:id])
-    if current_user.id == @room.user_id
-      @room.destroy
-      flash[:notice] = "ホストルームを削除しました"
-      redirect_to rooms_edit_select_path
+    @reservations = Reservation.find_by(room_id: @room.id)
+    if @reservations.blank?
+      if current_user.id == @room.user_id
+        @room.destroy
+        flash[:notice] = "ホストルームを削除しました"
+        redirect_to rooms_edit_select_path
+      else
+        flash.now[:notice] = "自分がホストのルーム以外は削除できません"
+        render 'edit'
+      end
     else
-      flash.now[:notice] = "自分がホストのルーム以外は編集できません"
-      render 'edit'
+      flash.now[:notice] = "予約が1件以上あるため削除できません"
+        render 'edit'
     end
   end
 
   def edit_select
     @myrooms = Room.where(user_id: current_user.id)
-  end
-
-  def search
-    @q = Room.ransack(params[:q])
   end
 
   private

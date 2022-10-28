@@ -35,8 +35,8 @@
                 <td><%= f.text_area :room_introduction, placeholder: "ルームの紹介、アピールポイント&#13;&#10;改行はそのまま反映されます".html_safe %></td>
               </tr>
               <tr>
-                <th><%= f.label :room_price, "料金" %><span class="hissu">必須</span></th>
-                <td><%= f.text_field :room_price, placeholder: "1泊の料金" %></td>
+                <th><%= f.label :room_price, "料金" %>（円）<span class="hissu">必須</span></th>
+                <td><%= f.number_field :room_price, placeholder: "1泊の料金（円）" %></td>
               </tr>
               <tr>
                 <th><%= f.label :image, "画像" %></th>

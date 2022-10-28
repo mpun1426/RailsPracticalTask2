@@ -102,12 +102,20 @@ header {
   align-items: center;
 }
 
+.currentusername:hover {
+  font-weight: bold;
+}
+
 .header_icon_flex {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-left: 12px;
+}
+
+.header_icon_flex:hover {
+  opacity: 0.7;
 }
 
 .header_menu_icon_logo {

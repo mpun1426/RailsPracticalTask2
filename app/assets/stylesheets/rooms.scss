@@ -184,7 +184,7 @@ table.new td {
 
 .room_show_main {
   max-width: 1150px;
-  margin: 20px auto;
+  margin: 20px auto 35px;
 }
 
 .room_name {
@@ -311,19 +311,65 @@ table.new td {
 }
 
 .reserve_yen {
-  margin: 0 0 24px;
+  margin: 0 0 16px;
 }
 
 .big_yen {
   font-size: 22px;
 }
 
+.selection {
+  border: 1px solid #B1B0B0;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+}
+
+.check input {
+  border: none;
+  width: 130px;
+  height: 25px;
+  font-size: 16px;
+  flex-direction: row-reverse;
+}
+
 .check_in {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 0 10px;
+  width: 150px;
+  font-size: 12px;
 }
 
 .check_out {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 0 10px;
+  border-left: 1px solid #B1B0B0;
+  width: 150px;
+  font-size: 12px;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 0 5px 10px;
+  border-top: 1px solid #B1B0B0;
+  font-size: 12px;
+  height: 48px;
+}
+
+.people input {
+  width: 80px;
+  height: 25px;
+  border: none;
+  font-size: 16px;
+  padding-left: 7px;
 }
 
 .reserve_button {

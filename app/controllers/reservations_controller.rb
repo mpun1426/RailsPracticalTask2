@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-
   def index
     @reservations = Reservation.all
   end
@@ -7,7 +6,13 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new(reservation_params)
     @room = Room.find_by(id: @reservation.room_id)
-    if @reservation.people.blank? || @reservation.check_in.blank? || @reservation.check_out.blank?
+    if @reservation.user_id.blank?
+      flash.now[:notice] = "予約するにはログインが必要です"
+      render template: 'rooms/show'
+    elsif @reservation.user_id == @room.user_id
+      flash.now[:notice] = "自分がホストのルームは予約できません"
+      render template: 'rooms/show'
+    elsif @reservation.people.blank? || @reservation.check_in.blank? || @reservation.check_out.blank?
       flash.now[:notice] = "予約フォームは全て入力して下さい"
       render template: 'rooms/show'
     elsif @reservation.check_in < Date.current
@@ -36,24 +41,20 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def show
-    # @reservation = Reservation.find(params[:id])
-  end
-
   def destroy
     @reservation = Reservation.find(params[:id])
-    if current_user.id == @reservation.user_id
-      @reservation.destroy
-      flash[:notice] = "予約取消しました"
-      redirect_to reservations_path
+    if current_user.present?
+      if current_user.id == @reservation.user_id
+        @reservation.destroy
+        flash[:notice] = "予約取消しました"
+        redirect_to reservations_path
+      else
+        flash[:notice] = "予約取消できるのは自分の予約のみです"
+        redirect_to reservations_path
+      end
     else
-      flash[:notice] = "予約取消できるのは自分の予約のみです"
-      redirect_to reservations_path
+      redirect_to rooms_nonlogin_path
     end
-  end
-
-  def error
-    @reservation = Reservation.new(reservation_params)
   end
 
   private

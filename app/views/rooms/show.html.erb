@@ -21,7 +21,7 @@
     <div class="room_show_contents">
       <div class="contents_header">
         <div class="contents_point">
-          <% if @host.presence %>
+          <% if @host.present? %>
             <h3 class="room_name_sub"><%= "#{@host.nickname}" %>さんの住宅の個室</h3>
           <% else %>
             <h3 class="room_name_sub">匿名さんの住宅の個室</h3>
@@ -30,7 +30,7 @@
           <span class="sub_point">キーボックスの鍵で入室できます。</span>
         </div>
         <div class="avatar">
-          <% if @host.presence %>
+          <% if @host.present? %>
             <% if @host.avatar.presence %>
               <%= image_tag @host.avatar.url %>
             <% else %>
@@ -53,35 +53,31 @@
         <% end %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <p class="reserve_yen"><span class="big_yen">¥ <%= @room.room_price %></span> 泊</p>
-        <div class="check_in">
-          <tr>
-            <th><%= f.label :check_in, "チェックイン" %></th>
-          </tr>
-          <tr>
-            <td><%= f.date_field :check_in %></td>
-          </tr>
+        <div class="selection">
+          <div class="check">
+            <div class="check_in">
+              <div><%= f.label :check_in, "チェックイン" %></div>
+              <div><%= f.date_field :check_in %></div>
+            </div>
+            <div class="check_out">
+              <div><%= f.label :check_out, "チェックアウト" %></div>
+              <div><%= f.date_field :check_out %></div>
+            </div>
+          </div>
+          <div class="people">
+            <div><%= f.label :people, "人数" %></div>
+            <div><%= f.number_field :people, placeholder: "ゲスト" %></div>
+          </div>
         </div>
-        <div class="check_out">
-          <tr>
-            <th><%= f.label :check_out, "チェックアウト" %></th>
-          </tr>
-          <tr>
-            <td><%= f.date_field :check_out %></td>
-          </tr>
-        </div>
-        <tr>
-          <th><%= f.label :people, "人数" %></th>
-          <td><%= f.number_field :people, placeholder: "1〜" %></td>
-        </tr>
         <%= f.submit "予約する", class: "reserve_button" %>
       <% end %>
       <p class="before_reserve">まだ請求されません</p>
       <div class="flex_between">
-        <p>清掃料金</p>
+        <p><span class="under_line">清掃料金</span></p>
         <p>¥ 0</p>
       </div>
       <div class="flex_between">
-        <p>サービス料</p>
+        <p><span class="under_line">サービス料</span></p>
         <p>¥ 0</p>
       </div>
     </div>

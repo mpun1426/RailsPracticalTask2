@@ -1,6 +1,13 @@
 ---
 ja:
   activerecord:
+    models:
+      room: ルーム
+    attributes:
+      room:
+        room_name: ルーム名
+        room_address: 所在地
+        room_price: 料金
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

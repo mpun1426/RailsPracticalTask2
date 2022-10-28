@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   get 'users/sign_up' => 'users#new'
   get 'rooms/index'
   get 'rooms/edit_select'
+  get 'rooms/nonlogin'
   resources :rooms do
     collection do
       get 'search'
     end
   end
-  resources :reservations, only: [:index, :new, :create, :show, :destroy]
+  resources :reservations, only: [:index, :new, :create, :destroy]
   post 'reservations/new' => 'reservations/new'
-  get 'reservations/error'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

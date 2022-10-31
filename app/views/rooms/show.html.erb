@@ -1,0 +1,85 @@
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<div class="room_show_main">
+  <h2 class="room_name"><%= @room.room_name %></h2>
+  <p class="room_review">★ 4.2　<span class="under_line">レビュー7件</span> 　 <span class="under_line"><%= @room.room_address %>、日本</span></p>
+  <% if @room.image? %>
+    <div class="image_flex">
+      <div class="image_main">
+        <%= image_tag @room.image.url, class:"image_main1" %>
+      </div>
+      <div class="image_sub">
+        <%= image_tag @room.image.url, class: "image_sub1" %>
+        <%= image_tag @room.image.url, class: "image_sub2" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="no_image">No Image</div>
+  <% end %>
+  <div class="room_show_container">
+    <div class="room_show_contents">
+      <div class="contents_header">
+        <div class="contents_point">
+          <% if @host.present? %>
+            <h3 class="room_name_sub"><%= "#{@host.nickname}" %>さんの住宅の個室</h3>
+          <% else %>
+            <h3 class="room_name_sub">匿名さんの住宅の個室</h3>
+          <% end %>
+          <span class="main_point">セルフチェックイン</span>
+          <span class="sub_point">キーボックスの鍵で入室できます。</span>
+        </div>
+        <div class="avatar">
+          <% if @host.present? %>
+            <% if @host.avatar.presence %>
+              <%= image_tag @host.avatar.url %>
+            <% else %>
+              <%= image_tag('sample.jpeg') %>
+            <% end %>
+          <% else %>
+            <%= image_tag('sample.jpeg') %>
+          <% end %>
+        </div>
+      </div>
+      <div class="room_introduction">
+        <%= simple_format(@room.room_introduction) %>
+      </div>
+    </div>
+
+    <div class="room_reserve_content">
+      <%= form_with model: @reservation, url: new_reservation_path do |f| %>
+        <% if current_user.present? %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <p class="reserve_yen"><span class="big_yen">¥ <%= @room.room_price %></span> 泊</p>
+        <div class="selection">
+          <div class="check">
+            <div class="check_in">
+              <div><%= f.label :check_in, "チェックイン" %></div>
+              <div><%= f.date_field :check_in %></div>
+            </div>
+            <div class="check_out">
+              <div><%= f.label :check_out, "チェックアウト" %></div>
+              <div><%= f.date_field :check_out %></div>
+            </div>
+          </div>
+          <div class="people">
+            <div><%= f.label :people, "人数" %></div>
+            <div><%= f.number_field :people, placeholder: "ゲスト" %></div>
+          </div>
+        </div>
+        <%= f.submit "予約する", class: "reserve_button" %>
+      <% end %>
+      <p class="before_reserve">まだ請求されません</p>
+      <div class="flex_between">
+        <p><span class="under_line">清掃料金</span></p>
+        <p>¥ 0</p>
+      </div>
+      <div class="flex_between">
+        <p><span class="under_line">サービス料</span></p>
+        <p>¥ 0</p>
+      </div>
+    </div>
+  </div>
+</div>

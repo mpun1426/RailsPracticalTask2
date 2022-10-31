@@ -1,0 +1,70 @@
+<div class="container_users">
+  <div class="side_menu">
+    <ul>
+      <li class="marker"><%= link_to "ホストルーム管理", rooms_path %></li><br>
+      <li class="marker"><%= link_to "ユーザー情報参照", users_account_path %></li>
+      <li class="marker_selected">ユーザー情報編集</li>
+    </ul>
+  </div>
+  <div class="main_menu_users_menu">
+    <div class="user_admin_edit">
+      <h2>ユーザー情報編集</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field_edit">
+          <%= f.label :email, "メールアドレス" %><br>
+          <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field_edit">
+          <%= f.label :nickname, "ニックネーム" %><br>
+          <%= f.text_field :nickname, autocomplete: "nickname", placeholder: "ニックネーム" %>
+        </div>
+
+        <div class="field_edit">
+          <%= f.label :introduction, "一言紹介" %><br>
+          <%= f.text_field :introduction, placeholder: "一言紹介" %>
+        </div>
+
+        <%= f.label :avatar, "アバター（変更する場合は選択して下さい）" %><br>
+        <div class="avatar_field_edit">
+          <span class="small">jpg, jpeg, gif, png　</span>
+          <%= f.file_field :avatar %>
+        </div>
+
+        <div class="field_edit">
+          <%= f.label :current_password, "変更を保存する場合は現在のパスワードを入力して下さい" %><br />
+          <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード" %>
+        </div>
+
+        <div class="field_edit">
+          <%= f.label :password, "新しいパスワード" %>（パスワードを変更する場合は入力して下さい）<br />
+          <% if @minimum_password_length %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "新しいパスワード（#{@minimum_password_length}文字以上の半角英数字）" %>
+          <% end %>
+        </div>
+
+        <div class="field_edit">
+          <%= f.label :password_confirmation, "新しいパスワード" %>（確認のため、もう一度入力して下さい）<br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "新しいパスワード（確認のため、もう一度入力して下さい）" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "変更を保存する", class: "reserve_button" %>
+        </div>
+      <% end %>
+      <div class="userdestroy">
+        <h3>ユーザーを削除する</h3>
+        <p>ユーザーを削除する場合はボタンを押して下さい</p>
+        <%= button_to "ユーザーを削除する", registration_path(resource_name), data: { confirm: "本当にユーザーを削除してもよろしいですか？" }, method: :delete, class: "reserve_button" %>
+      </div>
+      <%= link_to "戻る", :back, class: "reverse_button" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="user_admin_pwnew">
+  <h2>パスワード再発行</h2>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field_pwnew">
+      <p><%= f.label :email, "メールアドレスを入力して再発行ボタンを押して下さい" %></p>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "パスワードを再発行する", class: "reserve_button" %>
+    </div>
+  <% end %>
+  <div class="option2">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

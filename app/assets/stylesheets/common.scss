@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+}
+
+.yield {
+  min-height: 100vh;
+  padding-top: 88px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+::placeholder {
+  color: #BBBBBB;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header {
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 70px;
+  align-items: center;
+}
+
+.header_logo {
+  font-size: 32px;
+}
+
+.header_title {
+  font-size: 20px;
+  color: #FF395C;
+  margin: 0;
+}
+
+.header_title:hover {
+  opacity: 0.7;
+}
+
+.header_search {
+  margin-left: 150px;
+}
+
+.search_flex {
+  display: flex;
+}
+
+.search_flex_ad input {
+  height: 40px;
+  font-size: 16px;
+  margin: 0;
+  width: 140px;
+  padding-left: 18px;
+  border: 1px solid #DADADA;
+  box-shadow: -1px 1px 6px #E0E0E0;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+}
+
+.search_flex_key input {
+  height: 40px;
+  font-size: 16px;
+  margin: 0;
+  width: 250px;
+  padding-left: 10px;
+  border: 1px solid #DADADA;
+  box-shadow: 1px 1px 6px #E0E0E0;
+  border-radius: 0 20px 20px 0;
+}
+
+.search_flex_button {
+  color: #FFFFFF;
+  background-color: #FF395C;
+  height: 40px;
+  width: 40px;
+  border: none;
+  font-size: 14px;
+  border-radius: 50%;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.search_flex_button:hover {
+  color: #FFFFFF !important;
+  background-color: #FF395CD0;
+  cursor: pointer;
+}
+
+.header_user {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.currentusername:hover {
+  font-weight: bold;
+}
+
+.header_icon_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 12px;
+}
+
+.header_icon_flex:hover {
+  opacity: 0.7;
+}
+
+.header_menu_icon_logo {
+  height: 30px;
+}
+
+.header_menu_icon_name {
+  font-size: 12px;
+}
+
+.user_admin_button {
+  color: #FFFFFF !important;
+  background-color: #FF395C;
+  min-width: 55px;
+  padding: 12px 10px;
+  border: solid;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.user_admin_button:hover {
+  background-color: #FF395CD0;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_title {
+  font-size: 10px;
+  margin: 0;
+}

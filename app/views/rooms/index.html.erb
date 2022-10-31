@@ -1,0 +1,46 @@
+<div class="container_users">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <div class="side_menu">
+    <ul>
+      <li class="marker"><%= link_to "ユーザー管理", users_account_path %></li><br>
+      <li class="marker"><%= link_to "ホストルーム新規登録", new_room_path %></li>
+      <li class="marker_selected">登録済ホストルーム情報</li>
+      <li class="marker"><%= link_to "登録済ホストルーム編集", rooms_edit_select_path %></li>
+    </ul>
+  </div>
+  <div class="main_menu_users">
+    <div class="main_content_rooms">
+      <div class="main_container_rooms_center">
+        <h2>自分がホストのルーム一覧</h2>
+        <div class="index_room">
+          <% @myrooms.each do |room| %>
+            <table class="index_rooms">
+              <tr>
+                <% if room.image? %>
+                  <td class="image_index"><%= link_to image_tag(room.image.url), room %></td>
+                <% else %>
+                  <td><%= link_to "No Image", room, class:"no_image_index" %></td>
+                <% end %>
+              </tr>
+              <tr>
+                <td class="padding_top_10"><%= link_to "#{room.room_name}", room, class: "bold" %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "#{room.room_address}", room, class: "gray" %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "#{l room.updated_at}", room, class: "gray" %></td>
+              </tr>
+              <tr>
+                <td><%= link_to "¥ #{room.room_price} 泊", room %></td>
+              </tr>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

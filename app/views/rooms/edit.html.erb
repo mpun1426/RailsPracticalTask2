@@ -1,0 +1,60 @@
+<% if current_user.present? %>
+  <div class="container_users">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+    <div class="side_menu">
+      <ul>
+        <li class="marker"><%= link_to "ユーザー管理", users_account_path %></li><br>
+        <li class="marker"><%= link_to "ホストルーム新規登録", new_room_path %></li>
+        <li class="marker"><%= link_to "登録済ホストルーム情報", rooms_path %></li>
+        <li class="marker_selected">登録済ホストルーム編集</li>
+      </ul>
+    </div>
+    <div class="main_menu_users">
+      <div class="main_content_rooms">
+        <%= render "shared/error", obj: @room %>
+        <%= form_with model: @room do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+          <div class="newroom">
+            <div class="edit_upper">
+              <p class="room_new">貸出ルーム編集</p>
+              <%= link_to "このルームを削除する", @room, method: :delete, class: "room_button", data: {confirm: "本当にルームを削除してもよろしいですか？"} %>
+            </div>
+            <table class="new">
+              <tr>
+                <th><%= f.label :room_name, "ルーム名" %><span class="hissu">必須</span></th>
+                <td><%= f.text_field :room_name, placeholder: "ルームのタイトル・一言アピールポイント" %></td>
+              </tr>
+              <tr>
+                <th><%= f.label :room_address, "所在地" %><span class="hissu">必須</span></th>
+                <td><%= f.text_field :room_address, placeholder: "ルームの所在地（都道府県市町村区）" %></td>
+              </tr>
+              <tr class="height">
+                <th><%= f.label :room_introduction, "ルーム紹介" %></th>
+                <td><%= f.text_area :room_introduction, placeholder: "ルームの紹介、アピールポイント&#13;&#10;改行はそのまま反映されます".html_safe %></td>
+              </tr>
+              <tr>
+                <th><%= f.label :room_price, "料金" %>（円）<span class="hissu">必須</span></th>
+                <td><%= f.number_field :room_price, placeholder: "1泊の料金（円）" %></td>
+              </tr>
+              <tr>
+                <th><%= f.label :image, "画像" %></th>
+                <td>
+                  <%= f.file_field :image, onchange: 'previewImage()', class: "form-control" %>
+                </td>
+              </tr>
+            </table>
+
+            <div class="room_new_buttons">
+              <%= link_to "編集するホストルーム選択に戻る", rooms_edit_select_path, class: "room_button" %>
+              <%= f.submit "編集を完了する", class: "room_button" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= render 'shared/nologin' %>
+<% end %>

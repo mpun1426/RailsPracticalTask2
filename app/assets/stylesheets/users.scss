@@ -1,0 +1,303 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user_avatar img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1.5px solid #00D53A;
+  border-radius: 50%;
+  padding: 2px;
+  opacity: 1;
+}
+
+.user_avatar img:hover {
+  opacity: 0.7;
+  border: 1.5px solid #E93141;
+}
+
+.user_admin_signup {
+  margin: 30px auto 10px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 0 30px 30px;
+  height: 670px;
+  overflow: auto;
+}
+
+.user_admin_login {
+  margin: 75px auto 200px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 25px;
+  height: 460px;
+}
+
+.user_admin_edit {
+  margin: 15px auto 10px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 30px 30px;
+  height: 710px;
+  overflow: auto;
+}
+
+.user_admin_show {
+  margin: 15px auto 10px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 30px 30px;
+  height: 710px;
+  overflow: auto;
+}
+
+.user_admin_signup h3 {
+  padding: 18px 0;
+  margin: 0;
+  text-align: center;
+  color: #4D4D4D;
+  font-size: 16px;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.user_admin_signup h2 {
+  margin: 25px 0 0;
+}
+
+.user_admin_login h2 {
+  margin: 10px 0 0 0;
+}
+
+.user_admin_login h3 {
+  margin: 5px 0 20px;
+}
+
+.user_admin_edit h2 {
+  margin: 0;
+}
+
+.user_admin_show h2 {
+  margin: 10px 0 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.ul {
+  padding: 25px 0 17px 15px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.user_bold {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user_ib {
+  font-size: 20px;
+}
+
+.user_bold_inbl {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.user_inbl {
+  display: inline-block;
+  margin: 25px 0 25px 100px;
+}
+
+.user_inbl img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.user_admin_pwnew h2 {
+  margin: 10px 0 0 0;
+}
+
+.field input {
+  width: 492px;
+  height: 50px;
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.user_admin_pwnew {
+  margin: 75px auto 200px;
+  width: 500px;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px #cccccc;
+  padding: 30px 25px 25px;
+  height: 350px;
+  overflow: auto;
+}
+
+.field_pwnew input {
+  width: 484px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: 22px;
+}
+
+.field_pwnew p {
+  margin: 10px 0 0;
+}
+
+.avatar_field {
+  display: flex;
+  align-items: center;
+  border: 1px solid #767676;
+  height: 54px;
+  width: 498px;
+  margin: 15px 0 20px;
+  font-size: 22px;
+  border-radius: 2px;
+}
+
+.checkbox {
+  margin: 10px 0;
+}
+
+.checkbox input {
+  height: 25px;
+  width: 25px;
+}
+
+.checkbox_str {
+  display: inline-block;
+  vertical-align: super;
+}
+
+.option1 {
+  text-align: center;
+}
+
+.option2 {
+  margin-top: 20px;
+}
+
+.option2 p {
+  margin: 7px auto;
+}
+
+.field_edit input {
+  width: 487px;
+  height: 24px;
+  padding-left: 7px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.avatar_field_edit {
+  display: flex;
+  align-items: center;
+  border: 1px solid #767676;
+  height: 28px;
+  width: 496px;
+  padding-left: 2px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.userdestroy h3 {
+  margin-bottom: 0;
+}
+
+.userdestroy p {
+  margin: 0 0 10px;
+}
+
+.reverse_button {
+  color: #FFFFFF !important;
+  background-color: #D70665;
+  padding: 0px 0;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 498px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reverse_button:hover {
+  background-color: #E61D50;
+  cursor: pointer;
+}
+
+.container_users {
+  display: flex;
+}
+
+.side_menu {
+  width: 25%;
+  padding-top: 30px;
+  background-color: #fafafa;
+  border-right:1px solid #e0e0e0;
+}
+
+.marker {
+  border-left: 4px solid #00000000;
+  padding-left: 20px;
+  list-style: none;
+  font-size: 22px;
+  margin-bottom: 14px;
+  height: 45px;
+  display: flex;
+  align-items: center
+}
+
+.marker_selected {
+  border-left: 4px solid #8888ff;
+  padding-left: 20px;
+  color: #8888ff;
+  list-style: none;
+  font-size: 22px;
+  margin-bottom: 14px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.main_menu_users {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  background-color: #eaeaea;
+  padding-top: 35px;
+}
+
+.main_menu_users_menu {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding-top: 0px;
+}
+
+.main_content_users {
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+  height: 750px;
+  width: 70%;
+  overflow: auto;
+}

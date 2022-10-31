@@ -1,0 +1,44 @@
+<ul class="body_menu_airphp">
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_cont:'北海道'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'hokkaido.jpeg' %></div>
+      <div class="body_menu_airphp_name">北海道</div>
+    <% end %>
+  </li>
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_start:'京都'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'kyoto.jpeg' %></div>
+      <div class="body_menu_airphp_name">京都</div>
+    <% end %>
+  </li>
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_cont:'沖縄'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'okinawa.jpeg' %></div>
+      <div class="body_menu_airphp_name">沖縄</div>
+    <% end %>
+  </li>
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_cont:'東京'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'tokyo.jpeg' %></div>
+      <div class="body_menu_airphp_name">東京</div>
+    <% end %>
+  </li>
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_cont:'大阪'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'osaka.jpeg' %></div>
+      <div class="body_menu_airphp_name">大阪</div>
+    <% end %>
+  </li>
+  <li class="hoverline">
+    <%= link_to ({controller: "airphp", action: "index", q: {room_address_cont:'福岡'}}) do %>
+      <div class="body_menu_airphp_logo"><%= image_tag 'fukuoka.jpeg' %></div>
+      <div class="body_menu_airphp_name">福岡</div>
+    <% end %>
+  </li>
+</ul>
+<div class="container_airphp">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <%= render 'shared/roomtop' %>
+</div>
